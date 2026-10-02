@@ -1,0 +1,30 @@
+name: Build StructMatcher Function
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout Function repository
+      uses: actions/checkout@v4
+
+    - name: Show structure
+      run: |
+        pwd
+        find .
+
+    - name: Create package
+      run: |
+        zip -r structmatcher-func.zip .
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: structmatcher-func
+        path: structmatcher-func.zipname: Build StructMatcher Function
