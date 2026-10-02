@@ -21,8 +21,11 @@ jobs:
 
     - name: Create package
       run: |
-        zip -r structmatcher-func.zip .
-
+        zip -r structmatcher-func.zip \
+          host.json \
+          profile.ps1 \
+          requirements.psd1 \
+          StructMatcherApi
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
