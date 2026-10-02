@@ -46,3 +46,9 @@ jobs:
     - name: Verify Azure Access
       run: |
         az account show
+
+    - name: Deploy Function App
+      uses: Azure/functions-action@v1
+      with:
+          app-name: structmatcher-func
+          package: structmatcher-func.zip
