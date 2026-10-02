@@ -18,6 +18,12 @@ jobs:
     - name: Checkout Function repository
       uses: actions/checkout@v4
 
+    - name: Checkout StructMatcher
+      uses: actions/checkout@v4
+      with:
+        repository: peter-kaagman/StructMatcher
+        path: Modules/StructMatcher
+
     - name: Show structure
       run: |
         pwd
@@ -29,7 +35,9 @@ jobs:
           host.json \
           profile.ps1 \
           requirements.psd1 \
-          StructMatcherApi
+          StructMatcherApi \
+          Modules
+
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
