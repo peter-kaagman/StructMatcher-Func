@@ -27,4 +27,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: structmatcher-func
-        path: structmatcher-func.zipname: Build StructMatcher Function
+        path: structmatcher-func.zip
