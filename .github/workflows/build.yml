@@ -24,19 +24,35 @@ jobs:
         repository: peter-kaagman/StructMatcher
         path: Modules/StructMatcher
 
+    - name: Create deployment tree
+      run: |
+        mkdir -p build/StructMatcherApi
+        mkdir -p build/Modules/StructMatcher
+
+        cp host.json build/
+        cp profile.ps1 build/
+        cp requirements.psd1 build/
+
+        cp StructMatcherApi/* build/StructMatcherApi/
+
+        cp Modules/StructMatcher/StructMatcher.psm1 build/Modules/StructMatcher
+        cp Modules/StructMatcher/StructMatcher.psd1 build/Modules/StructMatcher
+
+
     - name: Show structure
       run: |
         pwd
-        find .
+        find build/.
 
     - name: Create package
       run: |
-        zip -r structmatcher-func.zip \
-          host.json \
-          profile.ps1 \
-          requirements.psd1 \
-          StructMatcherApi \
-          Modules
+        cd build
+        zip -r ../structmatcher-func.zip .
+
+    - name: Verify package
+      run: |
+        ls -lh
+        unzip -l structmatcher-func.zip
 
     - name: Upload artifact
       uses: actions/upload-artifact@v4
