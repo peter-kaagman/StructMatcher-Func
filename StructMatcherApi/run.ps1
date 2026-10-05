@@ -37,6 +37,11 @@ try {
 
     # Validate the input
     $propertyNames = @($body.PSObject.Properties.Name)
+    $requiredProperties = @(
+        'type',
+        'input',
+        'data'
+    )
     foreach ($requiredProperty in @('type', 'input', 'data')) {
         if ($requiredProperty -notin $propertyNames) {
             throw "Request body is missing the required '$requiredProperty' property."

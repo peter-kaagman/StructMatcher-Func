@@ -2,8 +2,8 @@ name: Build StructMatcher Function
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*'
 
 permissions:
   id-token: write
