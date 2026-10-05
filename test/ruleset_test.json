@@ -1,0 +1,59 @@
+{
+  "type": "ruleset",
+  "input": [
+    {
+      "result": "IT Hoorn",
+      "conditions": [
+        {
+          "path": "department",
+          "operator": "Equals",
+          "check": "IT"
+        },
+        {
+          "path": "location",
+          "operator": "Equals",
+          "check": "Hoorn"
+        }
+      ]
+    },
+    {
+      "result": "IT Grootebroek",
+      "conditions": [
+        {
+          "path": "department",
+          "operator": "Equals",
+          "check": "IT"
+        },
+        {
+          "path": "location",
+          "operator": "Equals",
+          "check": "Grootebroek"
+        }
+      ]
+    },
+    {
+      "result": "IT",
+      "conditions": [
+        {
+          "path": "department",
+          "operator": "Equals",
+          "check": "IT"
+        }
+      ]
+    },
+    {
+      "result": "PZ",
+      "conditions": [
+        {
+          "path": "department",
+          "operator": "Equals",
+          "check": "P&O"
+        }
+      ]
+    }
+  ],
+  "data": {
+    "department": "IT",
+    "location": "Hoorn"
+  }
+}

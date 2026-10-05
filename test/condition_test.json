@@ -1,0 +1,11 @@
+{
+  "type": "condition",
+  "input": {
+    "path": "department",
+    "operator": "NotEquals",
+    "check": "IT"
+  },
+  "data": {
+    "department": "Finance"
+  }
+}

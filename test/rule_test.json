@@ -1,0 +1,22 @@
+{
+  "type": "rule",
+  "input": {
+    "result": "Blaat",
+    "conditions": [
+      {
+        "path": "department",
+        "operator": "Equals",
+        "check": "IT"
+      },
+      {
+        "path": "location",
+        "operator": "Equals",
+        "check": "Hoorn"
+      }
+    ]
+  },
+  "data": {
+    "department": "IT",
+    "location": "Hoorn"
+  }
+}
