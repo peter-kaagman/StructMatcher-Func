@@ -401,3 +401,38 @@ StructMatcher is responsible for:
 - Result semantics
 
 StructMatcher-Func must not duplicate StructMatcher business logic.
+
+## CI/CD
+
+StructMatcher-Func is deployed automatically using GitHub Actions.
+
+Deployments are release-driven and triggered by Git tags:
+
+```bash
+git tag -a v0.1.0 -m "Release message"
+git push origin v0.1.0
+```
+
+The build pipeline:
+
+1. Checks out the StructMatcher-Func repository.
+2. Checks out the latest StructMatcher module from the StructMatcher repository.
+3. Creates a deployment package.
+4. Authenticates to Azure using OpenID Connect (OIDC).
+5. Deploys the package to the Azure Function App.
+
+GitHub Actions authenticates against Azure using a GitHub Environment named:
+
+```text
+production
+```
+
+The Azure Entra App Registration trusts this environment through a federated identity credential.
+
+No client secrets or publish profiles are used.
+
+The deployment workflow is defined in:
+
+```text
+.github/workflows/build.yml
+```
