@@ -4,7 +4,7 @@ PowerShell Azure Function that exposes the public StructMatcher API through an H
 
 StructMatcher-Func acts as a thin HTTP wrapper around StructMatcher. It normalizes and validates incoming requests, dispatches them to the requested StructMatcher entry point, and returns the result as JSON. The Function contains no rule-evaluation logic itself; that responsibility remains entirely within the separate StructMatcher module.
 
-The StructMatcher source code and module documentation are available in the [StructMatcher repository](https://github.com/peter-kaagman/StructMatcher). For the background, motivation and design considerations behind StructMatcher, see [Mysite](https://mysite.prjv.nl).
+The StructMatcher source code and module documentation are available in the [StructMatcher repository](https://github.com/peter-kaagman/StructMatcher). For the background, motivation and design considerations behind StructMatcher, see [Mysite](https://mysite.prjv.nl/article/from_distribution_lists_to_a_rule_evaluation_engine).
 
 
 ## API
